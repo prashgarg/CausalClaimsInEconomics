@@ -1,0 +1,134 @@
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "stage1_extraction_response",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "research_question": {
+          "type": "string"
+        },
+        "causal_identification": {
+          "type": "string"
+        },
+        "causal_claim": {
+          "type": "string"
+        },
+        "claim_snippets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "authors_institutions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "all_institutions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "title": {
+          "type": "string"
+        },
+        "year_of_release": {
+          "type": "integer"
+        },
+        "date_of_publication": {
+          "type": "string"
+        },
+        "jel_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "is_finance": {
+          "type": "boolean"
+        },
+        "is_development": {
+          "type": "boolean"
+        },
+        "is_labour": {
+          "type": "boolean"
+        },
+        "is_public_economics": {
+          "type": "boolean"
+        },
+        "is_urban_economics": {
+          "type": "boolean"
+        },
+        "is_macroeconomics": {
+          "type": "boolean"
+        },
+        "is_behavioral_economics": {
+          "type": "boolean"
+        },
+        "is_economic_history": {
+          "type": "boolean"
+        },
+        "is_econometric_theory": {
+          "type": "boolean"
+        },
+        "is_industrial_organization": {
+          "type": "boolean"
+        },
+        "is_environmental_economics": {
+          "type": "boolean"
+        },
+        "is_health_economics": {
+          "type": "boolean"
+        },
+        "is_political_economy": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "research_question",
+        "causal_identification",
+        "causal_claim",
+        "claim_snippets",
+        "authors",
+        "authors_institutions",
+        "all_institutions",
+        "title",
+        "year_of_release",
+        "date_of_publication",
+        "jel_codes",
+        "keywords",
+        "is_finance",
+        "is_development",
+        "is_labour",
+        "is_public_economics",
+        "is_urban_economics",
+        "is_macroeconomics",
+        "is_behavioral_economics",
+        "is_economic_history",
+        "is_econometric_theory",
+        "is_industrial_organization",
+        "is_environmental_economics",
+        "is_health_economics",
+        "is_political_economy"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
+

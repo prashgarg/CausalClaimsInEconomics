@@ -1,0 +1,132 @@
+\begin{tcolorbox}[title={Stage 2 (Snippet-Only) Response JSON Schema}, breakable]
+\begin{verbatim}
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "stage2_snippet_edge_response",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "claim": {
+                "type": "string",
+                "description": "The relationship expressed in 'A -> B' format, where A is the cause (or antecedent) and B is the effect (or consequent)."
+              },
+              "cause": {
+                "type": "string",
+                "description": "The cause (or antecedent) node as described in the paper."
+              },
+              "effect": {
+                "type": "string",
+                "description": "The effect (or consequent) node as described in the paper."
+              },
+              "type_of_relationship": {
+                "type": "string",
+                "description": "The type of relationship, capturing both causal and non-causal associations. Possible values include: direct effect, indirect effect, confounding, mediation, collider, ancestor, descendant, bidirectional (for cyclical relationships), association (for non-causal correlations), or other.",
+                "enum": [
+                  "direct effect",
+                  "indirect effect",
+                  "confounding",
+                  "mediation",
+                  "collider",
+                  "ancestor",
+                  "descendant",
+                  "bidirectional",
+                  "association",
+                  "other"
+                ]
+              },
+              "sign_of_impact": {
+                "type": "string",
+                "description": "The direction of the effect; choose from 'increase', 'decrease', or 'null result'.",
+                "enum": [
+                  "increase",
+                  "decrease",
+                  "null result"
+                ]
+              },
+              "effect_size": {
+                "type": "string",
+                "description": "The effect size, including magnitude if stated. If not available, write 'NA'."
+              },
+              "statistical_significance": {
+                "type": "string",
+                "description": "The statistical significance of the effect.",
+                "enum": [
+                  "p<0.01",
+                  "0.01<=p<0.05",
+                  "0.05<=p<0.1",
+                  "p>0.1",
+                  "NA"
+                ]
+              },
+              "causal_inference_method": {
+                "type": "string",
+                "description": "The method used to provide evidence for the relationship, as explicitly mentioned by the authors. If multiple methods are used for a claim, extract each as a separate edge. Choose from: 'RDD', 'DID', 'RCT', 'IV', 'Structural Estimation', 'Fixed Effects Models', 'Event Study', 'Simulation', 'Matching Methods', 'Synthetic Controls', 'VAR', 'Theoretical/Non-Empirical', 'Machine Learning Methods', 'Bayesian Methods', 'Other', or 'Do not know'.",
+                "enum": [
+                  "RDD",
+                  "DID",
+                  "RCT",
+                  "IV",
+                  "Structural Estimation",
+                  "Fixed Effects Models",
+                  "Event Study",
+                  "Simulation",
+                  "Matching Methods",
+                  "Synthetic Controls",
+                  "VAR",
+                  "Theoretical/Non-Empirical",
+                  "Machine Learning Methods",
+                  "Bayesian Methods",
+                  "Other",
+                  "Do not know"
+                ]
+              },
+              "evidence_method_other_description": {
+                "type": "string",
+                "description": "Provide additional details if 'Other' is selected for the method; if not applicable, write 'NA'."
+              },
+              "sources_of_exogenous_variation": {
+                "type": "string",
+                "description": "List the sources of exogenous variation used for identification. For example: 'Variation in the timing of reliability projects in Senegal', 'Public program that unexpectedly repaid local government arrears', 'Regional variation in heat stress', or 'Infertility shocks as an instrument for family size'. If not mentioned, write 'NA'."
+              },
+              "level_of_tentativeness": {
+                "type": "string",
+                "description": "The level of tentativeness or certainty in the evidence, as indicated by the authors.",
+                "enum": [
+                  "certain",
+                  "tentative"
+                ]
+              }
+            },
+            "required": [
+              "claim",
+              "cause",
+              "effect",
+              "type_of_relationship",
+              "sign_of_impact",
+              "effect_size",
+              "statistical_significance",
+              "causal_inference_method",
+              "evidence_method_other_description",
+              "sources_of_exogenous_variation",
+              "level_of_tentativeness"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "edges"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
+\end{verbatim}
+\end{tcolorbox}

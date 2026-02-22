@@ -1,0 +1,118 @@
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "stage2_snippet_edge_response",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "claim": {
+                "type": "string"
+              },
+              "cause": {
+                "type": "string"
+              },
+              "effect": {
+                "type": "string"
+              },
+              "type_of_relationship": {
+                "type": "string",
+                "enum": [
+                  "direct effect",
+                  "indirect effect",
+                  "confounding",
+                  "mediation",
+                  "collider",
+                  "ancestor",
+                  "descendant",
+                  "bidirectional",
+                  "association",
+                  "other"
+                ]
+              },
+              "sign_of_impact": {
+                "type": "string",
+                "enum": [
+                  "increase",
+                  "decrease",
+                  "null result"
+                ]
+              },
+              "effect_size": {
+                "type": "string"
+              },
+              "statistical_significance": {
+                "type": "string",
+                "enum": [
+                  "p<0.01",
+                  "0.01<=p<0.05",
+                  "0.05<=p<0.1",
+                  "p>0.1",
+                  "NA"
+                ]
+              },
+              "causal_inference_method": {
+                "type": "string",
+                "enum": [
+                  "RDD",
+                  "DID",
+                  "RCT",
+                  "IV",
+                  "Structural Estimation",
+                  "Fixed Effects Models",
+                  "Event Study",
+                  "Simulation",
+                  "Matching Methods",
+                  "Synthetic Controls",
+                  "VAR",
+                  "Theoretical/Non-Empirical",
+                  "Machine Learning Methods",
+                  "Bayesian Methods",
+                  "Other",
+                  "Do not know"
+                ]
+              },
+              "evidence_method_other_description": {
+                "type": "string"
+              },
+              "sources_of_exogenous_variation": {
+                "type": "string"
+              },
+              "level_of_tentativeness": {
+                "type": "string",
+                "enum": [
+                  "certain",
+                  "tentative"
+                ]
+              }
+            },
+            "required": [
+              "claim",
+              "cause",
+              "effect",
+              "type_of_relationship",
+              "sign_of_impact",
+              "effect_size",
+              "statistical_significance",
+              "causal_inference_method",
+              "evidence_method_other_description",
+              "sources_of_exogenous_variation",
+              "level_of_tentativeness"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "edges"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
+

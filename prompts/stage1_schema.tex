@@ -1,0 +1,162 @@
+\begin{tcolorbox}[title={Stage 1 Response JSON Schema}, breakable]
+\begin{verbatim}
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "stage1_extraction_response",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "research_question": {
+          "type": "string",
+          "description": "Provide the research questions. If the research questions are explicitly stated in the full text, quote them verbatim and indicate that they are quoted. If they are not explicitly stated, extract the research questions from the full text and mention that they are extracted."
+        },
+        "causal_identification": {
+          "type": "string",
+          "description": "Provide an exhaustive and detailed summary of the methods used to identify relationships in the paper, including:\n- The language related to both causal and non-causal relationships and the overall level of tentativeness in that language.\n- For each claim in the full text (including all intermediate steps, colliders, confounders, parents, children, ancestors, descendants, and any other relevant nodes in the relationship graph (DAG)), specify:\n  - The relationship between variables.\n  - The level of tentativeness and/or certainty in the language used (e.g., 'associates with', 'suggests', 'causes', 'correlates with').\n  - The identification strategies used with each claim (only if explicitly mentioned by the authors), providing a granular description of the methods (e.g., RCT, IV, Synthetic Control, Propensity Score Matching, etc.).\n  - Sources of exogenous variation used for identification, if any.\n  - Description of control groups used, if any.\n- Indicate for each claim which parts are examined with causal identification methods and which parts rely on correlational or theoretical analyses.\nImportant: Clearly extract each method mentioned. For example, if multiple methods are used for different aspects of a claim, list each method explicitly."
+        },
+        "causal_claim": {
+          "type": "string",
+          "description": "Provide a detailed, clear, and exhaustive description of all claims made in the paper's narrative (both causal and non-causal), capturing all intermediate steps and nodes in the relationship graph (DAG). Present the output in rich paragraph form and include the following:\n- All relationships between variables, with cause and effect clearly delineated.\n- For each claim, specify:\n    - Source and target variables, and any intermediate mechanisms.\n    - Type of relationship (e.g., direct effect, indirect effect, confounding, mediation, correlation, theoretical association).\n    - The method(s) used to establish the relationship. Be granular: if mixed methods are used (e.g., a theoretical rationale followed by an RCT or IV approach), list each method separately. For example:\n         - Experimental Approaches: RCT, Field Experiments, Lab Experiments\n         - Quasi-Experimental Methods: DID, RDD/RKD, IV, LATE, Natural Experiments, Matching (e.g., Propensity Score Matching)\n         - Panel Data Methods: Fixed Effects (One-Way, Two-Way), Dynamic Panel Models (Arellano-Bond, System GMM)\n         - Structural/Simulation Methods: Structural Estimation, CGE Models, Agent-Based Models\n         - Time Series & Macroeconometric Methods: VAR, SVAR, Event Studies\n         - Modern/Machine Learning Methods: Causal Forests, Double/Debiased ML, TMLE, Bayesian Methods\n         - Specialized Methods: Control Function, Heckman Correction, Sample Selection, Quantile Regression, Nonparametric/Semiparametric, Meta-Analysis\n    - Effect size and direction (including magnitude if stated).\n    - Statistical significance (and details on any null results).\n    - Level of tentativeness in the language used.\n- Indicate which parts derive from explicit causal identification and which from correlational or theoretical analyses.\nDo not truncate details; be as exhaustive as possible."
+        },
+        "claim_snippets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "An array of verbatim text snippets extracted from the paper, with one line per claim (causal or non-causal). Each snippet should be a complete sentence or a small sentence window (e.g., the sentence containing the claim plus its immediate context) to ensure sufficient context is captured for validation. These snippets are the exact text segments used to construct the detailed summary in the 'causal_claim' field."
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of authors' names."
+        },
+        "authors_institutions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Primary university affiliations of the authors, in the same order as the authors."
+        },
+        "all_institutions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Unique list of all institutions affiliated with the authors."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the paper."
+        },
+        "year_of_release": {
+          "type": "integer",
+          "description": "Year the paper was released."
+        },
+        "date_of_publication": {
+          "type": "string",
+          "description": "Date of publication in DD/MM/YYYY format. If not available, write 'NA'."
+        },
+        "jel_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Mentioned JEL codes, if any."
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Mentioned keywords, if any."
+        },
+        "is_finance": {
+          "type": "boolean",
+          "description": "True if the paper relates to Finance; otherwise, false."
+        },
+        "is_development": {
+          "type": "boolean",
+          "description": "True if the paper relates to Development; otherwise, false."
+        },
+        "is_labour": {
+          "type": "boolean",
+          "description": "True if the paper relates to Labour; otherwise, false."
+        },
+        "is_public_economics": {
+          "type": "boolean",
+          "description": "True if the paper relates to Public Economics; otherwise, false."
+        },
+        "is_urban_economics": {
+          "type": "boolean",
+          "description": "True if the paper relates to Urban Economics; otherwise, false."
+        },
+        "is_macroeconomics": {
+          "type": "boolean",
+          "description": "True if the paper relates to Macroeconomics; otherwise, false."
+        },
+        "is_behavioral_economics": {
+          "type": "boolean",
+          "description": "True if the paper relates to Behavioral Economics; otherwise, false."
+        },
+        "is_economic_history": {
+          "type": "boolean",
+          "description": "True if the paper relates to Economic History; otherwise, false."
+        },
+        "is_econometric_theory": {
+          "type": "boolean",
+          "description": "True if the paper relates to Econometric Theory; otherwise, false."
+        },
+        "is_industrial_organization": {
+          "type": "boolean",
+          "description": "True if the paper relates to Industrial Organization; otherwise, false."
+        },
+        "is_environmental_economics": {
+          "type": "boolean",
+          "description": "True if the paper relates to Environmental Economics; otherwise, false."
+        },
+        "is_health_economics": {
+          "type": "boolean",
+          "description": "True if the paper relates to Health Economics; otherwise, false."
+        },
+        "is_political_economy": {
+          "type": "boolean",
+          "description": "True if the paper relates to Political Economy; otherwise, false."
+        }
+      },
+      "required": [
+        "research_question",
+        "causal_identification",
+        "causal_claim",
+        "claim_snippets",
+        "authors",
+        "authors_institutions",
+        "all_institutions",
+        "title",
+        "year_of_release",
+        "date_of_publication",
+        "jel_codes",
+        "keywords",
+        "is_finance",
+        "is_development",
+        "is_labour",
+        "is_public_economics",
+        "is_urban_economics",
+        "is_macroeconomics",
+        "is_behavioral_economics",
+        "is_economic_history",
+        "is_econometric_theory",
+        "is_industrial_organization",
+        "is_environmental_economics",
+        "is_health_economics",
+        "is_political_economy"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
+\end{verbatim}
+\end{tcolorbox}
