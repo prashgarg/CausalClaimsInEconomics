@@ -1,0 +1,64 @@
+project:
+  name: causal-claims-repro-kit
+
+io:
+  input_dir: ../demo_input
+  output_dir: ../demo_output
+  file_glob: "*.txt"
+
+stage1:
+  model: gpt-4o-mini-2024-07-18
+  max_tokens: 16000
+  temperature: 0.0
+  iterations: 3
+  system_prompt_file: ../prompts/stage1_system.tex
+  user_prompt_template: |
+    Here is a text extract from an economics paper:
+
+    <<PAPER_TEXT_EXTRACT>>
+  response_schema_file: ../schemas/stage1_response_schema.json
+
+stage2:
+  model: gpt-4o-mini-2024-07-18
+  max_tokens: 16000
+  temperature: 0.0
+  iterations: 3
+  system_prompt_file: ../prompts/stage2_system.tex
+  user_prompt_template: |
+    Below are three pieces of information extracted from an economics paper:
+
+    1. A detailed summary of identification language and methods:
+    <<STAGE1_CAUSAL_IDENTIFICATION>>
+
+    2. A detailed summary of claims in the narrative:
+    <<STAGE1_CAUSAL_CLAIM>>
+
+    3. Verbatim claim snippets:
+    <<STAGE1_CLAIM_SNIPPETS>>
+
+    Use these texts to extract an edge list of relationships under the provided JSON schema.
+  response_schema_file: ../schemas/stage2_response_schema.json
+
+stage2_snippet_only:
+  model: gpt-4o-mini-2024-07-18
+  max_tokens: 16000
+  temperature: 0.0
+  iterations: 3
+  system_prompt_file: ../prompts/stage2_snippet_system.tex
+  user_prompt_template: |
+    Below is an array of verbatim claim snippets extracted from an economics paper:
+
+    <<CLAIM_SNIPPETS>>
+
+    Use these claim snippets to extract an edge list of relationships under the provided JSON schema.
+  response_schema_file: ../schemas/stage2_snippet_response_schema.json
+
+stage3_jel_mapping:
+  enabled: false
+  embedding_model: text-embedding-3-large
+  jel_metadata_csv: ../../int_data/AEA_Information.csv
+
+stage4:
+  baseline_threshold: 4
+  report_thresholds: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+

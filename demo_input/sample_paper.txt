@@ -1,0 +1,10 @@
+Title: Example Working Paper
+
+This is a minimal placeholder paper extract used only for smoke testing the
+public reproduction package. Replace this file with the first 30 pages of your
+own paper in plain text.
+
+The paper studies whether access to a policy program affects firm outcomes.
+We discuss a difference-in-differences design and report both causal and
+non-causal claims.
+
