@@ -1,0 +1,2 @@
+unique_papers_after_pipeline,n_unique_title_year_keys,n_title_year_keys_with_any_duplicates,n_title_year_keys_cross_repo_overlap,cross_repo_overlap_share_of_unique_titles_pct
+46014,43352,2574,2520,5.812880605277726

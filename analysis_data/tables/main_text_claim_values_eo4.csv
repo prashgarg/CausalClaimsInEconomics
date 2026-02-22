@@ -1,0 +1,47 @@
+claim,key,value
+prop_causal_pct_year,1990,7.735305059523808
+prop_causal_pct_year,2000,8.581809657759026
+prop_causal_pct_year,2010,21.530048038172616
+prop_causal_pct_year,2020,31.656689584321164
+prop_causal_pct_year,2023,32.641700074964966
+overall_causal_edge_share_pct,all_years_eo4,23.77595982637379
+top5_mean,eo4_snippet,0.10859852284125103
+field_pre_pct,Health,9.498207885304657
+field_post_pct,Health,41.912514128458405
+field_delta_pp,Health,32.414306243153746
+field_pre_pct,Development,6.996927803379416
+field_post_pct,Development,37.200796136778905
+field_delta_pp,Development,30.20386833339949
+field_pre_pct,Urban,9.166666666666666
+field_post_pct,Urban,37.42086793613512
+field_delta_pp,Urban,28.254201269468453
+field_pre_pct,Behavioral,6.638888888888888
+field_post_pct,Behavioral,33.428415810768755
+field_delta_pp,Behavioral,26.789526921879865
+field_pre_pct,Public,5.450825859830298
+field_post_pct,Public,29.701511900103068
+field_delta_pp,Public,24.250686040272768
+field_pre_pct,Pol. Econ.,2.5163398692810457
+field_post_pct,Pol. Econ.,26.143482096904634
+field_delta_pp,Pol. Econ.,23.627142227623587
+field_pre_pct,Environmental,2.02020202020202
+field_post_pct,Environmental,25.099545739348372
+field_delta_pp,Environmental,23.07934371914635
+field_pre_pct,Labour,8.769003090785269
+field_post_pct,Labour,31.089826281389747
+field_delta_pp,Labour,22.32082319060448
+field_pre_pct,Econ. History,6.5432098765432105
+field_post_pct,Econ. History,25.15288008207398
+field_delta_pp,Econ. History,18.60967020553077
+field_pre_pct,Finance,6.7133520074696555
+field_post_pct,Finance,22.07832093358133
+field_delta_pp,Finance,15.364968926111676
+field_pre_pct,IO,4.34116112198304
+field_post_pct,IO,16.866158828291752
+field_delta_pp,IO,12.524997706308712
+field_pre_pct,Macro,6.293549307835022
+field_post_pct,Macro,12.897038171837098
+field_delta_pp,Macro,6.603488864002076
+field_pre_pct,Econometrics,15.586226313982598
+field_post_pct,Econometrics,21.225635889814995
+field_delta_pp,Econometrics,5.639409575832397
