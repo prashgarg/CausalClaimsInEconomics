@@ -1,0 +1,10 @@
+run_id,iteration_code,s1_iteration,s2_iteration,rows,file,size_bytes,size_mib
+1,1_1,1,1,284733,graph_edges_run_01_s1i1_s2i1.parquet,10844232,10.3419
+2,1_2,1,2,284737,graph_edges_run_02_s1i1_s2i2.parquet,10840084,10.3379
+3,1_3,1,3,284490,graph_edges_run_03_s1i1_s2i3.parquet,10864825,10.3615
+4,2_1,2,1,284494,graph_edges_run_04_s1i2_s2i1.parquet,10873483,10.3698
+5,2_2,2,2,285000,graph_edges_run_05_s1i2_s2i2.parquet,10847680,10.3452
+6,2_3,2,3,284860,graph_edges_run_06_s1i2_s2i3.parquet,10860310,10.3572
+7,3_1,3,1,285163,graph_edges_run_07_s1i3_s2i1.parquet,10848679,10.3461
+8,3_2,3,2,284827,graph_edges_run_08_s1i3_s2i2.parquet,10835666,10.3337
+9,3_3,3,3,284969,graph_edges_run_09_s1i3_s2i3.parquet,10846422,10.344

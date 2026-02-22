@@ -1,0 +1,8 @@
+demo_output/*
+!demo_output/README.md
+*.log
+*.tmp
+.env
+public_audit_report.txt
+scripts/__pycache__/
+__pycache__/
