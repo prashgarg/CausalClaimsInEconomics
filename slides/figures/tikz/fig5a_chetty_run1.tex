@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (par) at (-3.0,1.55) {Parent income\\(D31)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (ineq) at (-2.8,0.3) {Income inequality\\(D31)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (school) at (-2.7,-0.8) {School quality\\(I21)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (fam) at (-2.4,-1.9) {Family stability\\(J12)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (seg) at (0.0,-2.1) {Residential\\segregation (R23)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (soc) at (2.4,-1.6) {Social capital\\(Z13)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (mob) at (0.3,-0.05) {Upward mobility\\(J62)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (child) at (3.0,1.55) {Child income\\(J13)};
+
+  \draw[cg noncausal] (par) -- (child);
+  \draw[cg noncausal] (ineq) -- (mob);
+  \draw[cg noncausal] (school) -- (mob);
+  \draw[cg noncausal] (fam) -- (mob);
+  \draw[cg noncausal] (seg) -- (mob);
+  \draw[cg noncausal] (soc) -- (mob);
+  \draw[cg noncausal] (mob) to[out=30,in=120,looseness=8] (mob);
+\end{tikzpicture}

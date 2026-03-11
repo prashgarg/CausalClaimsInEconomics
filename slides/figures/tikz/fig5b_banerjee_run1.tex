@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (micro) at (-3.0,0.2) {Microfinance access\\(G21)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (social) at (-0.4,1.9) {Social outcomes\\(I24)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (borrow) at (1.2,1.3) {Borrowing rates\\(E43)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (newbiz) at (1.4,0.2) {Business creation\\(L26)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (cons) at (1.0,-1.0) {Consumption\\patterns (D10)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (invest) at (-3.0,-1.85) {Investment in\\existing firms (G31)};
+  \node[cg node, text width=2.20cm, minimum height=7mm, inner sep=1.5pt] (profits) at (-0.15,-1.85) {Average profits\\(D33)};
+
+  \draw[cg causal] (micro) -- (social);
+  \draw[cg causal] (micro) -- (borrow);
+  \draw[cg causal] (micro) -- (newbiz);
+  \draw[cg causal] (micro) -- (cons);
+  \draw[cg causal] (micro) -- (invest);
+  \draw[cg causal] (invest) -- (profits);
+\end{tikzpicture}

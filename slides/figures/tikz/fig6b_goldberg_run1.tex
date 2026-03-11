@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+  \node[cg node, text width=2.30cm, minimum height=7.5mm, inner sep=1.6pt] (tariff) at (-2.8,1.0) {Lower input\\tariffs (F14)};
+  \node[cg node, text width=2.30cm, minimum height=7.5mm, inner sep=1.6pt] (imports) at (-2.8,-1.0) {New imported\\intermediates (Y20)};
+  \node[cg node, text width=2.30cm, minimum height=7.5mm, inner sep=1.6pt] (prod) at (0.8,1.5) {Higher firm\\productivity (D21)};
+  \node[cg node, text width=2.30cm, minimum height=7.5mm, inner sep=1.6pt] (scope) at (0.8,0.2) {Expanded product\\scope (L25)};
+  \node[cg node, text width=2.30cm, minimum height=7.5mm, inner sep=1.6pt] (domestic) at (0.8,-1.2) {New domestic\\products (L68)};
+
+  \draw[cg causal] (tariff) -- (prod);
+  \draw[cg causal] (tariff) -- (scope);
+  \draw[cg noncausal] (imports) -- (domestic);
+\end{tikzpicture}

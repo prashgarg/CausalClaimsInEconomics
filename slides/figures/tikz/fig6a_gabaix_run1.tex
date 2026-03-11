@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+  \node[cg node, text width=2.30cm, minimum height=7.5mm, inner sep=1.6pt] (shock) at (-2.9,0.0) {Idiosyncratic shocks\\(D89)};
+  \node[cg node, text width=2.30cm, minimum height=7.5mm, inner sep=1.6pt] (prop) at (0.7,1.1) {Propagation through\\the economy (E10)};
+  \node[cg node, text width=2.30cm, minimum height=7.5mm, inner sep=1.6pt] (macro) at (0.7,-1.1) {Macroeconomic\\dynamics (E19)};
+
+  \draw[cg noncausal] (shock) -- (prop);
+  \draw[cg noncausal] (shock) -- (macro);
+\end{tikzpicture}
